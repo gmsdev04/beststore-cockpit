@@ -42,6 +42,7 @@
             @click="selecionar"
             color="green darken-1"
             text
+            :disabled="selectButtonIsDisabled"
           >
             Selecionar
           </v-btn>
@@ -64,14 +65,20 @@ export default {
     },
     methods :{
         selecionar(){
-            console.log('selecionando',this.selectedStore)
+            bus.emitEvent('storeSelected', this.selectedStore)
+            this.selectStore = false //desativa o dialog depois de enviar o evento de seleção
         }
     },
     created(){
         bus.listenEvent('selectStore',value  => {
-            this.stores.push({name:'Belcks 1',id:1}) //vem da api
+            this.stores.push({name:'Belcks Pizzas 2',id:1}) //vem da api
             this.selectStore = value;
         })
+    },
+    computed: {
+      selectButtonIsDisabled() {
+        return this.selectedStore == ''; //ATIVA BOTÃO SE ALGO SELECIONADO
+      }
     }
 }
 </script>

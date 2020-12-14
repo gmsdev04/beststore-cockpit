@@ -2,7 +2,7 @@
 
 <div>
    <v-app-bar app hide-on-scroll :dark="darkTheme" dense>
-      <transition enter-active-class="animate__animated animate__bounceInLeft"
+      <transition mode="out-in" enter-active-class="animate__animated animate__bounceInLeft"
         leave-active-class="animate__animated animate__backOutLeft">
         <div class="cockpit-text" v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.sm">Cockpit</div>
       </transition>

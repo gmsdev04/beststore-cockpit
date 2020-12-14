@@ -15,7 +15,7 @@
 <script>
 import NavBar from './templates/NavBar.vue'
 import LeftMenu from './templates/LeftMenu.vue'
-
+import bus from '@/eventBus'
 export default {
   name: 'App',
 
@@ -25,8 +25,13 @@ export default {
     return { 
         store : 'Belcks Pizzas 1',
         darkTheme :false
-    
      }
+  },
+  created(){
+    bus.listenEvent('storeSelected',value  => {
+        value == value
+        this.store = 'Belcks Pizzas 2'
+    })
   }
 };
 </script>

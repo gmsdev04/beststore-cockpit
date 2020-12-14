@@ -18,7 +18,16 @@
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
+      <v-divider/>
+      <v-list-item >
+          <v-list-item-icon>
+            <v-icon color="green darken-2">mdi-cogs</v-icon>
+          </v-list-item-icon>
 
+          <v-list-item-content>
+            <v-list-item-title>Configurações da loja</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
       </v-list>
     </v-navigation-drawer>
 </template>
@@ -33,8 +42,14 @@ export default {
     },
     data(){
         return {
-            items: [{
-                    title: 'Usuarios',
+            items: [
+                {
+                    title: 'Agora',
+                    icon: 'mdi-chart-areaspline-variant',
+                    color: 'green darken-2'
+                },
+                {
+                    title: 'Usuários',
                     icon: 'mdi-account-supervisor-outline',
                     color: 'green darken-2'
                 },
@@ -44,8 +59,18 @@ export default {
                     color: 'green darken-2'
                 },
                 {
-                    title: 'Agora',
-                    icon: 'mdi-chart-areaspline-variant',
+                    title: 'Vendas',
+                    icon: 'mdi-cart',
+                    color: 'green darken-2'
+                },
+                {
+                    title: 'Utilizado',
+                    icon: 'mdi-cash-usd',
+                    color: 'green darken-2'
+                },
+                {
+                    title: 'Grupos de acessos',
+                    icon: 'mdi-account-group',
                     color: 'green darken-2'
                 },
             ]
@@ -74,7 +99,4 @@ export default {
   height: 47px;
 }
 
-.store-name{
-	
-}
 </style>
