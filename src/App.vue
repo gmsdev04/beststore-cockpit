@@ -6,8 +6,7 @@
     <LeftMenu :darkTheme="darkTheme"/>
 
     <v-main>
-      <div class="mainSpace">
-    </div>
+
     </v-main>
   </v-app>
 </template>
@@ -15,7 +14,8 @@
 <script>
 import NavBar from './templates/NavBar.vue'
 import LeftMenu from './templates/LeftMenu.vue'
-import bus from '@/eventBus'
+import bus from '@/eventBus'  
+
 export default {
   name: 'App',
 
@@ -24,7 +24,8 @@ export default {
   data(){ 
     return { 
         store : 'Belcks Pizzas 1',
-        darkTheme :false
+        darkTheme :true
+        
      }
   },
   created(){
