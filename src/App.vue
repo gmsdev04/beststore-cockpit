@@ -12,20 +12,18 @@
 </template>
 
 <script>
-import NavBar from './templates/NavBar.vue'
-import LeftMenu from './templates/LeftMenu.vue'
+import NavBar from './components/templates/NavBar.vue'
+import LeftMenu from './components/templates/LeftMenu.vue'
 import bus from '@/eventBus'  
 
 export default {
   name: 'App',
-
   components: {NavBar, LeftMenu},
   
   data(){ 
     return { 
         store : 'Belcks Pizzas 1',
-        darkTheme :true
-        
+        darkTheme :false
      }
   },
   created(){
