@@ -1,6 +1,6 @@
 <template>
   <div class="negocios-consulta">
-    <v-simple-table>
+    <v-simple-table >
     <template v-slot:default>
       <thead>
         <tr>
@@ -10,19 +10,31 @@
           <th class="text-left">
             Descrição
           </th>
+          <th class="text-left">
+            Ativo
+          </th>
         </tr>
       </thead>
       <tbody>
         <tr
-          v-for="item in desserts"
-          :key="item.name"
+          v-for="negocio in negocios"
+          :key="negocio.name"
+          @click="detalhesDoNegocio(negocio)"
         >
-          <td>{{ item.name }}</td>
-          <td>{{ item.calories }}</td>
+          <td>{{ negocio.nome }}</td>
+          <td>{{ negocio.descricao }}</td>
+           <td>{{ negocio.ativo ? 'Sim' : 'Não' }}</td>
         </tr>
       </tbody>
     </template>
   </v-simple-table>
+
+  <!-- CINCULAR LOAD -->
+  <div class="text-center">
+    <v-progress-circular v-show="negocios == undefined"
+        color="green"
+    ></v-progress-circular>
+    </div>
   </div>
 </template>
 
@@ -30,23 +42,25 @@
  export default {
     data () {
       return {
-        desserts: [
-          {
-            name: 'Frozen Yogurt',
-            calories: 159,
-          }
-        ],
+        negocios: undefined,
       }
     },
-    methods : {
-     
+    methods:{
+      detalhesDoNegocio(negocio){
+        this.$router.push({name: 'detalharNegocio', params: { id:negocio.id}}) 
+      }
     },
-     mounted(){
-        console.log('mounted')
+     created(){
+       this.$http.get('negocios')
+				.then(resp => {
+					this.negocios = resp.data
+				})
       }
   }
 </script>
 
 <style scoped>
-
+.v-progress-circular {
+  margin: 1rem;
+}
 </style>

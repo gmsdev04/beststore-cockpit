@@ -9,6 +9,8 @@ import Utilizado from '../views/Utilizado.vue'
 import CriarNovoUsuario from '../views/usuarios/CriarNovoUsuario.vue'
 import ConsultarUsuarios from '../views/usuarios/ConsultarUsuarios.vue'
 import NegociosConsulta from '../views/negocios/NegociosConsulta.vue'
+import NegociosDetalhe from '../views/negocios/NegociosDetalhe.vue'
+
 
 Vue.use(VueRouter)
 
@@ -44,7 +46,12 @@ const routes = [
   {
     path: '/negocios',
     component: NegociosConsulta
-
+  },
+  {
+    name: 'detalharNegocio',
+    path: '/negocios/:id/detalhes',
+    component: NegociosDetalhe,
+    props: true
   },
   {
     path: '/helloWorld',

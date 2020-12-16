@@ -9,20 +9,14 @@
     {
       "nome": "Mercados",
       "ativo": true,
-      "descrição": "Perfil baseado em necessiades comuns de mercados.",
+      "descricao": "Perfil baseado em necessidades comuns de mercados. Afins",
       "id": 1
     },
     {
-      "nome": "Mercados",
-      "ativo": false,
-      "descrição": "Perfil baseado em necessiades comuns de mercados.",
-      "id": 2
-    },
-    {
-      "nome": "Mercados",
+      "nome": "Adega",
       "ativo": true,
-      "descrição": "Perfil baseado em necessiades comuns de mercados.",
-      "id": 3
+      "descricao": "Perfil baseado em necessiades comuns de adegas. Vendas, cancelamento de vendas, controle de estoque, produtos mais vendidos e afins.",
+      "id": 2
     }
   ]
 }
