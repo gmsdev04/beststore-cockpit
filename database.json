@@ -1,0 +1,28 @@
+{
+  "pessoas": [
+    {
+      "id": 1,
+      "nome": "Guilherme"
+    }
+  ],
+  "negocios": [
+    {
+      "nome": "Mercados",
+      "ativo": true,
+      "descrição": "Perfil baseado em necessiades comuns de mercados.",
+      "id": 1
+    },
+    {
+      "nome": "Mercados",
+      "ativo": false,
+      "descrição": "Perfil baseado em necessiades comuns de mercados.",
+      "id": 2
+    },
+    {
+      "nome": "Mercados",
+      "ativo": true,
+      "descrição": "Perfil baseado em necessiades comuns de mercados.",
+      "id": 3
+    }
+  ]
+}

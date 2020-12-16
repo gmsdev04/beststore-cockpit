@@ -8,7 +8,7 @@ import GruposDeAcessos from '../views/GruposDeAcessos.vue'
 import Utilizado from '../views/Utilizado.vue'
 import CriarNovoUsuario from '../views/usuarios/CriarNovoUsuario.vue'
 import ConsultarUsuarios from '../views/usuarios/ConsultarUsuarios.vue'
-
+import NegociosConsulta from '../views/negocios/NegociosConsulta.vue'
 
 Vue.use(VueRouter)
 
@@ -34,12 +34,17 @@ const routes = [
     component: GruposDeAcessos
   },
   {
-    path: '/consultar-usuarios',
+    path: '/usuarios',
     component: ConsultarUsuarios
   },
   {
     path: '/criar-novo',
     component: CriarNovoUsuario
+  },
+  {
+    path: '/negocios',
+    component: NegociosConsulta
+
   },
   {
     path: '/helloWorld',
