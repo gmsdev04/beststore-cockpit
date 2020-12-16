@@ -5,16 +5,6 @@
       scrollable
       max-width="300px"
     >
-      <template v-slot:activator="{ on, attrs }">
-        <v-btn
-          color="primary"
-          dark
-          v-bind="attrs"
-          v-on="on"
-        >
-          Open Dialog
-        </v-btn>
-      </template>
       <v-card>
         <v-card-title>Selecione a loja</v-card-title>
         <v-divider></v-divider>

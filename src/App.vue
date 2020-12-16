@@ -5,9 +5,9 @@
 
     <LeftMenu :darkTheme="darkTheme"/>
 
-    <v-main>
-
-    </v-main>
+    <v-content>
+      <router-view/>
+    </v-content>
   </v-app>
 </template>
 

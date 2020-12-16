@@ -1,7 +1,7 @@
 <template>
 
 <div>
-   <v-app-bar app  :dark="darkTheme" dense>
+   <v-app-bar app  :dark="darkTheme" dense fixed elevate-on-scroll >
       <transition mode="out-in" enter-active-class="animate__animated animate__bounceInLeft"
         leave-active-class="animate__animated animate__backOutLeft">
         <div class="cockpit-text" v-show="$vuetify.breakpoint.lg || $vuetify.breakpoint.md || $vuetify.breakpoint.sm">Cockpit</div>

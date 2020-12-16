@@ -6,7 +6,7 @@
     <v-divider />
     <!-- OPÇÕES SEM SUB ITEMS -->
     <v-list dense nav>
-      <v-list-item v-for="item in itemsWithoutSubItems" :key="item.title" link>
+      <v-list-item v-for="item in itemsWithoutSubItems" :key="item.title" :to="item.to" link>
 
         <v-list-item-icon>
           <v-icon :color="item.color">{{ item.icon }}</v-icon>
@@ -34,11 +34,12 @@
           </v-list-item-content>
         </template>
 
-        <v-list-item v-for="subItem in item.subItems" :key="subItem.title" dense  link>
+        <v-list-item v-for="subItem in item.subItems" :key="subItem.title" dense  :to="subItem.to" link>
           <v-list-item-icon class="ml-0">
             <v-icon :color="subItem.color">{{ subItem.icon }}</v-icon>
           </v-list-item-icon>   
           <v-list-item-content link>
+            <router-link></router-link>
             <v-list-item-title class="leftMenuGroupSubItem" v-text="subItem.title" >
             </v-list-item-title>
           </v-list-item-content>
@@ -90,7 +91,8 @@ export default {
                 {
                     title: 'Agora',
                     icon: 'mdi-chart-areaspline-variant',
-                    color: 'green darken-2' 
+                    color: 'green darken-2',
+                    to: '/'
                 },
                 {
                     title: 'Usuários',
@@ -100,52 +102,40 @@ export default {
                         {
                           title: 'Criar novo',
                           icon: 'mdi-account-plus-outline',
-                          color: 'green darken-2'
+                          color: 'green darken-2',
+                          to: '/criar-novo'
                         },
                         {
                           title: 'Consultar',
                           icon: 'mdi-account-search-outline',
-                          color: 'green darken-2'
-                        },
-                        {
-                          title: 'Atualizar',
-                          icon: 'mdi-account-edit-outline',
-                          color: 'green darken-2'
-                        },
-                        {
-                          title: 'Desativar',
-                          icon: 'mdi-account-minus-outline',
-                          color: 'green darken-2'
-                        }
-                        
+                          color: 'green darken-2',
+                          to: '/consultar-usuarios'
+                        }    
                     ]
                 },
                 {
                     title: 'Estoque',
                     icon: 'mdi-dresser-outline',
                     color: 'green darken-2',
-                    subItems:[
-                        {
-                          title: 'Fim de validade',
-                          icon: 'mdi-account-supervisor-outline',
-                          color: 'green darken-2'
-                        },
-                    ]
+                    to: '/estoque'
                 },
                 {
                     title: 'Vendas',
                     icon: 'mdi-cart',
-                    color: 'green darken-2'
+                    color: 'green darken-2',
+                    to: '/vendas'
                 },
                 {
                     title: 'Utilizado',
                     icon: 'mdi-cash-usd',
-                    color: 'green darken-2'
+                    color: 'green darken-2',
+                    to: '/utilizado'
                 },
                 {
                     title: 'Grupos de acessos',
                     icon: 'mdi-account-group',
-                    color: 'green darken-2'
+                    color: 'green darken-2',
+                    to: '/grupos-de-acessos'
                 },
             ]
         }
