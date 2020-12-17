@@ -1,5 +1,12 @@
 <template>
   <div class="negocios-consulta">
+    <v-row>
+      <v-spacer></v-spacer>
+     <v-btn class="mb-2 mr-4"  small right to="/negocios/novo" color="green" 
+      > Novo</v-btn>
+
+    </v-row>
+      <v-divider></v-divider>
     <v-simple-table >
     <template v-slot:default>
       <thead>

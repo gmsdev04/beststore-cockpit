@@ -8,8 +8,9 @@ import GruposDeAcessos from '../views/GruposDeAcessos.vue'
 import Utilizado from '../views/Utilizado.vue'
 import CriarNovoUsuario from '../views/usuarios/CriarNovoUsuario.vue'
 import ConsultarUsuarios from '../views/usuarios/ConsultarUsuarios.vue'
-import NegociosConsulta from '../views/negocios/NegociosConsulta.vue'
-import NegociosDetalhe from '../views/negocios/NegociosDetalhe.vue'
+import NegociosLista from '../views/negocios/NegociosLista.vue'
+import NegociosDetalhes from '../views/negocios/detalhes/NegociosDetalhes.vue'
+import NegociosNovo from '../views/negocios/novo/NegociosNovo.vue'
 
 
 Vue.use(VueRouter)
@@ -45,12 +46,18 @@ const routes = [
   },
   {
     path: '/negocios',
-    component: NegociosConsulta
+    component: NegociosLista
   },
   {
     name: 'detalharNegocio',
     path: '/negocios/:id/detalhes',
-    component: NegociosDetalhe,
+    component: NegociosDetalhes,
+    props: true
+  },
+  {
+    name: 'novoNegocio',
+    path: '/negocios/novo',
+    component: NegociosNovo,
     props: true
   },
   {
