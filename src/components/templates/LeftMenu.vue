@@ -87,6 +87,12 @@ export default {
                     color: 'green darken-2',
                     to: '/negocios'
                 },
+                {
+                    title: 'Campos padrões',
+                    icon: 'mdi-head-cog-outline',
+                    color: 'green darken-2',
+                    to: '/campos-padroes'
+                },
             ]
         }
     }

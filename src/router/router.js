@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HelloWorld from '../components/HelloWorld.vue'
 import Agora from '../views/Agora.vue'
 import Estoque from '../views/Estoque.vue'
 import Vendas from '../views/Vendas.vue'
@@ -11,7 +10,8 @@ import ConsultarUsuarios from '../views/usuarios/ConsultarUsuarios.vue'
 import NegociosLista from '../views/negocios/NegociosLista.vue'
 import NegociosDetalhes from '../views/negocios/detalhes/NegociosDetalhes.vue'
 import NegociosNovo from '../views/negocios/novo/NegociosNovo.vue'
-
+import CamposPadroes from '../views/campos-padroes/CamposPadroes.vue'
+import CamposPadroesDetalhes from '../views/campos-padroes/CamposPadroesDetalhes.vue'
 
 Vue.use(VueRouter)
 
@@ -61,8 +61,15 @@ const routes = [
     props: true
   },
   {
-    path: '/helloWorld',
-    component: HelloWorld 
+    name: 'camposPadroes',
+    path: '/campos-padroes',
+    component: CamposPadroes,
+  },
+  {
+    name:'camposPadroes.detalhes',
+    path:"/campos-padroes/:id", 
+    component:CamposPadroesDetalhes, 
+    props: true
   }
 ]
 

@@ -18,5 +18,25 @@
       "descricao": "Perfil baseado em necessiades comuns de adegas. Vendas, cancelamento de vendas, controle de estoque, produtos mais vendidos e afins.",
       "id": 2
     }
+  ],
+  "tipos-de-dados": [
+    {
+      "nome": "Texto",
+      "tamanho-minimo": null,
+      "tamanho-maximo": null,
+      "id": 5
+    }
+  ],
+  "campos-padroes": [
+    {
+      "nome": "Nome",
+      "produtivo": true,
+      "tipo": {
+        "nome": "Texto",
+        "tamanho-minimo": null,
+        "tamanho-maximo": null
+      },
+      "id": 1
+    }
   ]
 }
