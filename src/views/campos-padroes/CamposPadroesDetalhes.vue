@@ -8,10 +8,10 @@
         <v-divider/>
         <v-form  :readonly="readonly">
 
-            <!-- NOME E PRODUTIVO -->
+            <!-- NOME -->
             <v-row>
                 <!-- NOME -->
-                <v-col cols="6" md="4">
+                <v-col cols="12" md="4">
                     <v-text-field 
                         v-model="campoPadrao.nome" 
                         :counter="10" 
@@ -19,14 +19,6 @@
                         small>
                     </v-text-field>
                 </v-col>
-
-                <!-- PRODUTIVO -->
-                <v-col cols="6" md="4">
-                     <v-checkbox label="Produtivo" color="success" v-model="campoPadrao.produtivo"
-                        hide->
-                    </v-checkbox>
-                </v-col>
-    
             </v-row>
 
             <!-- TIPO DE DADO -->
@@ -36,19 +28,27 @@
                        return-object
                        :items="tiposDeDados"
                        v-model="campoPadrao.tipo"
-                       item-text="alias"
-                       
+                       item-text="alias"             
                        label="Tipo do campo"
                     ></v-autocomplete>
                 </v-col>
             </v-row>
-            
-        
+                    
             
             <v-tipo-de-dado 
                 :tipoDeDado="campoPadrao.tipo"
                 :readonly="readonly"/>
 
+            
+
+<!-- PRODUTIVO -->
+            <v-row>
+                <v-col cols="6" md="4">
+                     <v-checkbox label="Produtivo" color="success" v-model="campoPadrao.produtivo"
+                        hide->
+                    </v-checkbox>
+                </v-col>
+            </v-row>
         </v-form> 
     </div>
 </template>
@@ -63,7 +63,7 @@ export default {
         return {
             campoPadrao : {tipo:{}},
             tiposDeDados: [],
-            readonly : true
+            readonly : false
         }
     },
     methods : {

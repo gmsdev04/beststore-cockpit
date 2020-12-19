@@ -1,7 +1,7 @@
 {
   "pessoas": [
     {
-      "id": 1,
+      "id": "9ee74478-d37c-4f77-a968-24e3579cc89c",
       "nome": "Guilherme"
     }
   ],
@@ -10,17 +10,19 @@
       "nome": "Mercados",
       "ativo": true,
       "descricao": "Perfil baseado em necessidades comuns de mercados. Afins\ngosto do gouku ",
-      "id": 1
+      "id": "fe70d17f-ea46-41ae-9266-4706ae964113"
     },
     {
       "nome": "Adega",
       "ativo": true,
       "descricao": "Perfil baseado em necessiades comuns de adegas. Vendas, cancelamento de vendas, controle de estoque, produtos mais vendidos e afins.",
-      "id": 2
+      "id": "48cf41ca-1fb9-4f75-90a1-2ac637db3c87"
     }
   ],
   "tipos-de-dados": [
     {
+      
+      "id": "8453042f-18a0-4172-acb0-08214ba1f814",
       "nome": "Numero",
       "alias": "Número",
       "valorPadrao": {
@@ -34,12 +36,13 @@
       "valorMaximo": {
         "descricao": "Representa o número maximo a ser preenchido",
         "valor": "0"
-      },
-      "id": 1
+      }
     }
   ],
   "campos-padroes": [
     {
+      
+      "id": "acc34232-0e97-4596-91e0-35379bbbfe00",
       "nome": "Quantidade",
       "produtivo": true,
       "tipo": {
@@ -47,7 +50,7 @@
         "alias": "Número",
         "valorPadrao": {
           "descricao": "Representa o número caso nenhum seja inserido",
-          "valor": "0.0"
+          "valor": "0"
         },
         "valorMinimo": {
           "descricao": "Representa o menor número a incluido",
@@ -55,10 +58,9 @@
         },
         "valorMaximo": {
           "descricao": "Representa o número maximo a ser preenchido",
-          "valor": "0"
+          "valor": "1000000000"
         }
-      },
-      "id": 1
+      }
     }
   ]
 }
