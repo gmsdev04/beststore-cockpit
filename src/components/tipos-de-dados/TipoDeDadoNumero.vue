@@ -27,7 +27,6 @@
                             v-model="tipoDeDadoNumero.valorMaximo.valor"
                             type="number" 
                             label="Valor máximo"
-                            v-mask="'###.###.###-##'"
                             >
                         </v-text-field>
                     </v-col>
