@@ -6,9 +6,12 @@
             </v-flex>
         </v-layout>
         <v-divider/>
-        <v-form  readonly>
+        <v-form  :readonly="readonly">
+
+            <!-- NOME E PRODUTIVO -->
             <v-row>
-                <v-col cols="12" md="4">
+                <!-- NOME -->
+                <v-col cols="6" md="4">
                     <v-text-field 
                         v-model="campoPadrao.nome" 
                         :counter="10" 
@@ -16,43 +19,73 @@
                         small>
                     </v-text-field>
                 </v-col>
-            </v-row>
 
-            <v-row>
-                <v-col cols="12" md="4">
-                    <v-select
-                       :items="items"
-                       label="Standard"
-                    ></v-select>                 
-                </v-col>
-            </v-row>
-
-            <v-row>
-                <v-col cols="12" md="4">
-                     <v-checkbox label="Campo está produtivo?" color="success" v-model="campoPadrao.produtivo"
-                        hide-details>
+                <!-- PRODUTIVO -->
+                <v-col cols="6" md="4">
+                     <v-checkbox label="Produtivo" color="success" v-model="campoPadrao.produtivo"
+                        hide->
                     </v-checkbox>
                 </v-col>
+    
             </v-row>
-        </v-form>
 
-         <h3>{{ campoPadrao }}</h3>
+            <!-- TIPO DE DADO -->
+            <v-row>
+                <v-col cols="12" md="4">
+                    <v-autocomplete
+                       return-object
+                       :items="tiposDeDados"
+                       v-model="campoPadrao.tipo"
+                       item-text="alias"
+                       
+                       label="Tipo do campo"
+                    ></v-autocomplete>
+                </v-col>
+            </v-row>
+            
+        
+            
+            <v-tipo-de-dado 
+                :tipoDeDado="campoPadrao.tipo"
+                :readonly="readonly"/>
+
+        </v-form> 
     </div>
 </template>
 
 <script>
+import VtipoDeDado from '@/components/tipos-de-dados/TipoDeDado.vue'
+
 export default {
+    components:{'v-tipo-de-dado':VtipoDeDado},
     props:['id'],
     data(){
         return {
             campoPadrao : {tipo:{}},
-             items: ['Foo', 'Bar', 'Fizz', 'Buzz']
+            tiposDeDados: [],
+            readonly : true
+        }
+    },
+    methods : {
+        selecionarNovoTipoDeDados(valorSelecionado){
+            console.log(valorSelecionado)
+
+            const encontrarTipoSelecionado = function(tipoDaVez){
+                return tipoDaVez.alias == valorSelecionado
+            }
+
+            this.campoPadrao.tipo = this.tiposDeDados.filter(encontrarTipoSelecionado)
         }
     },
     created(){
         this.$http.get("campos-padroes/"+this.id)
         .then(res => {
             this.campoPadrao = res.data
+        })
+
+        this.$http.get("tipos-de-dados")
+        .then(res => {
+            this.tiposDeDados = res.data
         })
     }
 }

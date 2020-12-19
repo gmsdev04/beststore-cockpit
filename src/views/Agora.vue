@@ -1,15 +1,18 @@
 <template>
   <div class="agora">
-    <center> 
-      <h3>Agora!</h3>
-    </center>
+        <v-select
+                       :items="items"
+                       label="Standard"
+                    ></v-select>    
   </div>
 </template>
 
 <script>
-export default {
-
-}
+ export default {
+    data: () => ({
+      items: ['Foo', 'Bar', 'Fizz', 'Buzz'],
+    }),
+  }
 </script>
 
 <style>

@@ -21,20 +21,42 @@
   ],
   "tipos-de-dados": [
     {
-      "nome": "Texto",
-      "tamanho-minimo": null,
-      "tamanho-maximo": null,
-      "id": 5
+      "nome": "Numero",
+      "alias": "Número",
+      "valorPadrao": {
+        "descricao": "Representa o número caso nenhum seja inserido",
+        "valor": "0.0"
+      },
+      "valorMinimo": {
+        "descricao": "Representa o menor número a incluido",
+        "valor": "0"
+      },
+      "valorMaximo": {
+        "descricao": "Representa o número maximo a ser preenchido",
+        "valor": "0"
+      },
+      "id": 1
     }
   ],
   "campos-padroes": [
     {
-      "nome": "Nome",
+      "nome": "Quantidade",
       "produtivo": true,
       "tipo": {
-        "nome": "Texto",
-        "tamanho-minimo": null,
-        "tamanho-maximo": null
+        "nome": "Numero",
+        "alias": "Número",
+        "valorPadrao": {
+          "descricao": "Representa o número caso nenhum seja inserido",
+          "valor": "0.0"
+        },
+        "valorMinimo": {
+          "descricao": "Representa o menor número a incluido",
+          "valor": "0"
+        },
+        "valorMaximo": {
+          "descricao": "Representa o número maximo a ser preenchido",
+          "valor": "0"
+        }
       },
       "id": 1
     }
