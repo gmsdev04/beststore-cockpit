@@ -21,7 +21,6 @@
   ],
   "tipos-de-dados": [
     {
-      
       "id": "8453042f-18a0-4172-acb0-08214ba1f814",
       "nome": "Numero",
       "alias": "Número",
@@ -41,16 +40,16 @@
   ],
   "campos-padroes": [
     {
-      
       "id": "acc34232-0e97-4596-91e0-35379bbbfe00",
-      "nome": "Quantidade",
+      "nome": "Quantidade de produtos",
       "produtivo": true,
       "tipo": {
+        "id": "8453042f-18a0-4172-acb0-08214ba1f814",
         "nome": "Numero",
         "alias": "Número",
         "valorPadrao": {
           "descricao": "Representa o número caso nenhum seja inserido",
-          "valor": "0"
+          "valor": "1"
         },
         "valorMinimo": {
           "descricao": "Representa o menor número a incluido",
@@ -58,8 +57,9 @@
         },
         "valorMaximo": {
           "descricao": "Representa o número maximo a ser preenchido",
-          "valor": "1000000000"
-        }
+          "valor": "10"
+        },
+        "somenteInteiro": true
       }
     }
   ]

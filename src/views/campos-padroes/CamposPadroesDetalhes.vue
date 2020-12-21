@@ -1,20 +1,24 @@
 <template>
     <div class="campos-padroes-detalhes">
+        <v-row>
         <v-layout column >
-            <v-flex xs12 sm8 md6> 
+            <v-flex xs12 sm8 md6 class="ml-3"> 
                 Detalhes
             </v-flex>
         </v-layout>
+        <v-btn text color="green" @click="readonly = !readonly">
+            {{ readonly ? 'Editar' : 'Para de editar'}}
+        </v-btn>
+        
+        </v-row>
         <v-divider/>
         <v-form  :readonly="readonly">
-
             <!-- NOME -->
             <v-row>
                 <!-- NOME -->
                 <v-col cols="12" md="4">
                     <v-text-field 
-                        v-model="campoPadrao.nome" 
-                        :counter="10" 
+                        v-model="campoPadrao.nome"
                         label="Nome do campo" required
                         small>
                     </v-text-field>
@@ -33,15 +37,11 @@
                     ></v-autocomplete>
                 </v-col>
             </v-row>
-                    
             
-            <v-tipo-de-dado 
-                :tipoDeDado="campoPadrao.tipo"
-                :readonly="readonly"/>
+            <!-- CONFIGURACAO TIPO DE DADO -->
+            <v-configuracao-tipo-de-dado :tipoDeDado="campoPadrao.tipo" :readonly="readonly"/>
 
-            
-
-<!-- PRODUTIVO -->
+            <!-- PRODUTIVO -->
             <v-row>
                 <v-col cols="6" md="4">
                      <v-checkbox label="Produtivo" color="success" v-model="campoPadrao.produtivo"
@@ -49,21 +49,39 @@
                     </v-checkbox>
                 </v-col>
             </v-row>
-        </v-form> 
+
+            <!-- SALVAR -->
+            <v-row v-show="!readonly">
+               <v-btn
+                    class="ma-2"
+                    :loading="loadingSalvando"
+                    color="success"
+                    block
+                    @click="salvarCampoPadrao"
+                >
+                    Salvar
+                    <template v-slot:loader>
+                        <span>Salvando...</span>
+                    </template>
+                </v-btn>
+            </v-row>
+        </v-form>
     </div>
 </template>
 
 <script>
-import VtipoDeDado from '@/components/tipos-de-dados/TipoDeDado.vue'
+import bus from '@/eventBus.js'
+import ConfiguracaoTipoDeDado from '@/components/tipos-de-dados/configuracao/ConfiguracaoTipoDeDado.vue'
 
 export default {
-    components:{'v-tipo-de-dado':VtipoDeDado},
+    components:{'v-configuracao-tipo-de-dado':ConfiguracaoTipoDeDado},
     props:['id'],
     data(){
         return {
             campoPadrao : {tipo:{}},
             tiposDeDados: [],
-            readonly : false
+            readonly : true,
+            loadingSalvando : false,
         }
     },
     methods : {
@@ -75,6 +93,16 @@ export default {
             }
 
             this.campoPadrao.tipo = this.tiposDeDados.filter(encontrarTipoSelecionado)
+        },
+        salvarCampoPadrao(){
+            this.loadingSalvando = true
+
+            //CHAMA API DE PATCH
+            this.$http.patch("campos-padroes/"+this.id, this.campoPadrao).then(() => {})
+
+            this.readonly = true;
+
+            this.loadingSalvando = false;
         }
     },
     created(){
@@ -87,6 +115,12 @@ export default {
         .then(res => {
             this.tiposDeDados = res.data
         })
+
+        bus.listenEvent("tipoCampoUpdateValues",data => {
+            console.log('recebi atualizacao de numero')
+            this.campoPadrao.tipo = data
+        })
+
     }
 }
 </script>
