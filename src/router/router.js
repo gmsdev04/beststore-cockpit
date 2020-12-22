@@ -5,13 +5,14 @@ import Estoque from '../views/Estoque.vue'
 import Vendas from '../views/Vendas.vue'
 import GruposDeAcessos from '../views/GruposDeAcessos.vue'
 import Utilizado from '../views/Utilizado.vue'
-import CriarNovoUsuario from '../views/usuarios/CriarNovoUsuario.vue'
+import NovoUsuario from '../views/usuarios/NovoUsuario.vue'
 import ConsultarUsuarios from '../views/usuarios/ConsultarUsuarios.vue'
-import NegociosLista from '../views/negocios/NegociosLista.vue'
+import ConsultarNegocios from '../views/negocios/ConsultarNegocios.vue'
 import NegociosDetalhes from '../views/negocios/detalhes/NegociosDetalhes.vue'
 import NegociosNovo from '../views/negocios/novo/NegociosNovo.vue'
-import CamposPadroes from '../views/campos-padroes/CamposPadroes.vue'
-import CamposPadroesDetalhes from '../views/campos-padroes/CamposPadroesDetalhes.vue'
+import ConsultarCamposPadroes from '../views/campos-padroes/ConsultarCamposPadroes.vue'
+import CamposPadroesDetalhes from '../views/campos-padroes/detalhes/CamposPadroesDetalhes.vue'
+import CamposPadroesNovo from '../views/campos-padroes/novo/CamposPadroesNovo.vue'
 
 Vue.use(VueRouter)
 
@@ -42,11 +43,11 @@ const routes = [
   },
   {
     path: '/criar-novo',
-    component: CriarNovoUsuario
+    component: NovoUsuario
   },
   {
     path: '/negocios',
-    component: NegociosLista
+    component: ConsultarNegocios
   },
   {
     name: 'detalharNegocio',
@@ -63,7 +64,12 @@ const routes = [
   {
     name: 'camposPadroes',
     path: '/campos-padroes',
-    component: CamposPadroes,
+    component: ConsultarCamposPadroes,
+  },
+  {
+    name: 'camposPadroes.novo',
+    path: '/campos-padroes/novo',
+    component: CamposPadroesNovo,
   },
   {
     name:'camposPadroes.detalhes',

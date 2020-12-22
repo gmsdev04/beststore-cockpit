@@ -1,14 +1,14 @@
 <template>
     <div class="campos-padroes">
-        <v-layout column justify-center align-center>
-            <v-flex xs12 sm8 md6>
-                Campos padrões
-            </v-flex>
-        </v-layout>
+        
         <v-row>
-            <v-spacer></v-spacer>
-            <v-btn class="mb-2 mr-4" small right color="green"> Novo</v-btn>
-
+            <v-layout column class="ml-3">
+                <v-flex xs12 sm8 md6>
+                    Campos padrões
+                </v-flex>
+            </v-layout>
+                <v-spacer></v-spacer>
+                <v-btn class="mb-2 mr-4" small right color="green" to="/campos-padroes/novo"> Novo</v-btn>
         </v-row>
         <v-divider></v-divider>
         <v-simple-table>

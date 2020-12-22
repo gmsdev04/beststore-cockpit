@@ -1,25 +1,27 @@
 <template>
     <div class="negocios-detalhe">
-        <v-layout column justify-center align-center>
-            <v-flex xs12 sm8 md6>
-                Detalhes do negócio
-            </v-flex>
-        </v-layout>
+        <v-row>
+            <v-layout column>
+                <v-flex xs12 sm8 md6 class="ml-3">
+                    Detalhes do negócio
+                </v-flex>
+            </v-layout>
+        </v-row>
         <v-divider> </v-divider>
-
-             <transition mode="in-out" leave-active-class="animate__animated animate__fadeOut" v-if="negocio == undefined">
+            <transition
+                mode="in-out" 
+                leave-active-class="animate__animated animate__fadeOut" 
+                v-if="negocio == undefined">
+                
                 <v-progress-linear indeterminate color="green">
-
 
                 </v-progress-linear>
             </transition>
-            <v-expansion-panels accordion  :disabled="negocio == undefined" >
+            <v-expansion-panels accordion  :disabled="negocio == undefined" mandatory>
                 <v-expansion-panel>
-                   
                     <v-expansion-panel-header >
                         Detalhes
                     </v-expansion-panel-header>
-
                     <v-expansion-panel-content  v-if="negocio != undefined">
                             <v-form>
                                 <v-row>
@@ -39,20 +41,24 @@
                                             label="Descrição do negócio">
                                         </v-textarea>
                                     </v-col>
-
                                 </v-row>
                                 <v-row>
                                     <v-spacer></v-spacer>
                                     <v-btn text color="green" @click="salvarDetalhes">
                                         Salvar
                                     </v-btn>
-
                                 </v-row>
                             </v-form>
                     </v-expansion-panel-content>
+                </v-expansion-panel>
 
-
-            
+                <v-expansion-panel>
+                    <v-expansion-panel-header >
+                        Ideal de produto
+                    </v-expansion-panel-header>
+                    <v-expansion-panel-content  v-if="negocio != undefined">
+                            
+                    </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
     </div>

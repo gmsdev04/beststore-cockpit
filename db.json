@@ -22,7 +22,7 @@
   "tipos-de-dados": [
     {
       "id": "8453042f-18a0-4172-acb0-08214ba1f814",
-      "nome": "Numero",
+      "nome": "NUMERO",
       "alias": "Número",
       "valorPadrao": {
         "descricao": "Representa o número caso nenhum seja inserido",
@@ -36,7 +36,38 @@
         "descricao": "Representa o número maximo a ser preenchido",
         "valor": "0"
       }
+    },
+    {
+      "id": "36361a5f-7a5e-46ca-a21f-d81b4f0f90a5",
+      "nome": "DATA-E-HORA",
+      "alias": "Data e hora"
+    },
+    {
+      "id": "6eb05482-447b-48c5-a869-c54410a87300",
+      "nome": "DATA",
+      "alias": "Data"
+    },
+    {
+      "id": "d20e659f-f7b3-4022-bf43-eeb975c6a970",
+      "nome": "TEXTO",
+      "alias": "Texto"
+    },
+    {
+      "id": "2efbf74e-94f7-4580-9dac-2a9a5a643f82",
+      "nome": "MONETARIO",
+      "alias": "Monetário"
+    },
+    {
+      "id": "2efbf74e-94f7-4580-9dac-2a9a5a643f82",
+      "nome": "FLAG",
+      "alias": "Flag"
+    },
+    {
+      "id": "b27821a4-694e-449b-ae20-fb89ea79e9e5",
+      "nome": "LISTA-DE-OPCOES",
+      "alias": "Lista de opções"
     }
+    
   ],
   "campos-padroes": [
     {
