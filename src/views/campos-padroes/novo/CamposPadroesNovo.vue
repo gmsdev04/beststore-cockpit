@@ -11,16 +11,17 @@
         <v-divider/>
         <v-form 
             ref="form"
-            v-model="valid">
+            v-model="valid"
+            >
             <!-- NOME -->
             <v-row>
                 <!-- NOME -->
                 <v-col cols="12" md="4">
-                    <v-text-field 
+                    <v-text-field
                         v-model="campoPadrao.nome"
+                        :rules="nomeRules"
                         label="Nome do campo"
-                        small        
-                        required
+                        small
                         >
                     </v-text-field>
                 </v-col>
@@ -30,11 +31,12 @@
             <v-row>
                 <v-col cols="12" md="4">
                     <v-autocomplete
-                       return-object
-                       :items="tiposDeDados"
                        v-model="campoPadrao.tipo"
+                       :items="tiposDeDados"
+                       :rules="tipoRules"
                        item-text="alias"             
                        label="Tipo do campo"
+                       return-object
                     ></v-autocomplete>
                 </v-col>
             </v-row>
@@ -52,20 +54,23 @@
             </v-row>
 
             <!-- SALVAR -->
+            <v-divider></v-divider>
             <v-row>
+                 <v-col cols="12" md="12">
                <v-btn
                     :disabled="!valid"
                     class="ma-2"
                     :loading="loadingSalvando"
                     color="success"
                     block
-                    @click="validar"
+                    @click="salvar"
                 >
                     Salvar
                     <template v-slot:loader>
                         <span>Salvando...</span>
                     </template>
                 </v-btn>
+                </v-col>
             </v-row>
         </v-form>
   </div>
@@ -79,18 +84,29 @@ export default {
     data(){
         return {
             valid : true,
-            campoPadrao : {tipo:{} },
+            campoPadrao : {tipo:{}},
             tiposDeDados : [],
-            loadingSalvando : false
+            loadingSalvando : false,
+            nomeRules: [
+                v => !!v || 'Este campo é obrigatorio'
+            ],
+            tipoRules: [
+                v => !!v.nome || 'Esta campo é obrigatorio'
+            ],
         }
     },
     methods : {
-        salvarCampoPadrao(){
+        salvar(){
+            this.loadingSalvando = true;
 
+            
+            this.loadingSalvando = false;
+
+            //RESETA CAMPO E LIMPA VALIDATIONS
+            this.campoPadrao = {tipo:{}}
+            this.$refs.form.resetValidation()
         },
-        validar(){
-            this.$refs.form.validate()
-        }
+        
     },
     created(){
         this.$http.get("tipos-de-dados")

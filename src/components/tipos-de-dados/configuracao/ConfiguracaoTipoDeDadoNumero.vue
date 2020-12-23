@@ -2,7 +2,7 @@
     <div class="tipo-de-dado">
 
         <!-- Número -->
-        <v-expansion-panels v-if="tipoDeDado.nome=='Numero'" single  :readonly="readonly">
+        <v-expansion-panels  single  :readonly="readonly">
             <v-expansion-panel>
                 <v-expansion-panel-header>
                     Configurações número
@@ -40,8 +40,8 @@
                             :min="tipoDeDadoNumero.valorMinimo.valor"
                             :max="tipoDeDadoNumero.valorMaximo.valor"
                             v-model="tipoDeDadoNumero.valorPadrao.valor"
-                            :rules="[rules.valorPadraoMenorIgualMaximo(tipoDeDadoNumero.valorPadrao.valor,tipoDeDadoNumero.valorMaximo.valor),
-                                        rules.valorPadraoMaiorIgualMinimo(tipoDeDadoNumero.valorPadrao.valor,tipoDeDadoNumero.valorMinimo.valor)]
+                            :rules="[   rulesValorPadrao.valorPadraoMenorIgualMaximo(tipoDeDadoNumero.valorPadrao.valor,tipoDeDadoNumero.valorMaximo.valor),
+                                        rulesValorPadrao.valorPadraoMaiorIgualMinimo(tipoDeDadoNumero.valorPadrao.valor,tipoDeDadoNumero.valorMinimo.valor)]
                                         "
                             type="number" 
                             label="Valor padrão"
@@ -82,7 +82,7 @@ export default {
         return {
             tipoDeDadoNumero : JSON.parse(JSON.stringify(this.tipoDeDado)),
             somenteInteiro : false,
-            rules: {
+            rulesValorPadrao: {
                     valorPadraoMenorIgualMaximo(valorPadrao,valorMaximo) {
                         return valorPadrao <= parseFloat(valorMaximo) || `Valor padrão maior que o máximo`;
                     },

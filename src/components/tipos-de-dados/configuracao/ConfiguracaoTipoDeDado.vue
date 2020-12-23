@@ -2,7 +2,7 @@
     <div class="configuracao-tipo-de-dado">
 
         <!-- Número -->
-        <ConfiguracaoTipoDeDadoNumero v-if="tipoDeDado.nome=='Numero'" :tipoDeDado="tipoDeDado"/>
+        <ConfiguracaoTipoDeDadoNumero v-if="tipoDeDado.nome=='NUMERO'" :tipoDeDado="tipoDeDado"/>
 
     </div>
 </template>
