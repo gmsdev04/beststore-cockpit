@@ -38,7 +38,7 @@
 
   <!-- CINCULAR LOAD -->
   <div class="text-center">
-    <v-progress-circular v-show="negocios == undefined"
+    <v-progress-circular indeterminate v-show="negocios == undefined"
         color="green"
     ></v-progress-circular>
     </div>

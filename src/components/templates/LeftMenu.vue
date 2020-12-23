@@ -1,5 +1,12 @@
 <template>
-  <v-navigation-drawer app permanent absolute :dark="darkTheme" expand-on-hover clipped >
+  <v-navigation-drawer 
+    :dark="darkTheme" 
+    app 
+    permanent 
+    absolute
+    :expand-on-hover="$vuetify.breakpoint.xs"
+    clipped 
+    :bottom="$vuetify.breakpoint.xs">
 
    
     <!-- OPÇÕES SEM SUB ITEMS -->

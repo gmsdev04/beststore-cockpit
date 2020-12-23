@@ -57,7 +57,7 @@
                         Ideal de produto
                     </v-expansion-panel-header>
                     <v-expansion-panel-content  v-if="negocio != undefined">
-                            
+                            <IdealDeProdutoGrid/>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -65,7 +65,10 @@
 </template>
 
 <script>
+import IdealDeProdutoGrid from '@/components/ideal-de-produto/IdealDeProdutoGrid.vue'
+
     export default {
+        components: {IdealDeProdutoGrid},
         props: ['id'],
         data() {
             return {

@@ -66,6 +66,11 @@
       "id": "b27821a4-694e-449b-ae20-fb89ea79e9e5",
       "nome": "LISTA-DE-OPCOES",
       "alias": "Lista de opções"
+    },
+    {
+      "id": "fd95abd0-39f6-44df-82ae-75026423076b",
+      "nome": "AREA-DE-TEXTO",
+      "alias": "Área de texto"
     }
   ],
   "campos-padroes": [
@@ -85,10 +90,9 @@
         "valorMaximo": {
           "descricao": "Representa o número maximo a ser preenchido",
           "valor": "10000000"
-        },
-        "somenteInteiro": true
+        }
       },
-      "nome": "Quantidade estoque",
+      "nome": "Quantidade estoque real",
       "produtivo": true,
       "id": 1
     },
@@ -98,7 +102,7 @@
         "nome": "MONETARIO",
         "alias": "Monetário"
       },
-      "nome": "Valor do produto",
+      "nome": "Valor de venda",
       "produtivo": true,
       "id": 3
     },
@@ -119,6 +123,84 @@
       },
       "nome": "Nome produto",
       "id": 5
+    },
+    {
+      "tipo": {
+        "id": "8453042f-18a0-4172-acb0-08214ba1f814",
+        "nome": "NUMERO",
+        "alias": "Número",
+        "valorPadrao": {
+          "descricao": "Representa o número caso nenhum seja inserido",
+          "valor": "0"
+        },
+        "valorMinimo": {
+          "descricao": "Representa o menor número a incluido",
+          "valor": "0"
+        },
+        "valorMaximo": {
+          "descricao": "Representa o número maximo a ser preenchido",
+          "valor": "10000000"
+        }
+      },
+      "nome": "Código de barras",
+      "id": 6
+    },
+    {
+      "tipo": {
+        "id": "2efbf74e-94f7-4580-9dac-2a9a5a643f82",
+        "nome": "MONETARIO",
+        "alias": "Monetário"
+      },
+      "nome": "Valor de compra",
+      "id": 7
+    },
+    {
+      "tipo": {
+        "id": "6eb05482-447b-48c5-a869-c54410a87300",
+        "nome": "DATA",
+        "alias": "Data"
+      },
+      "nome": "Data de fabricação",
+      "id": 8
+    },
+    {
+      "tipo": {
+        "id": "b27821a4-694e-449b-ae20-fb89ea79e9e5",
+        "nome": "LISTA-DE-OPCOES",
+        "alias": "Lista de opções"
+      },
+      "nome": "Categoria",
+      "id": 9
+    },
+    {
+      "tipo": {
+        "id": "8453042f-18a0-4172-acb0-08214ba1f814",
+        "nome": "NUMERO",
+        "alias": "Número",
+        "valorPadrao": {
+          "descricao": "Representa o número caso nenhum seja inserido",
+          "valor": "0"
+        },
+        "valorMinimo": {
+          "descricao": "Representa o menor número a incluido",
+          "valor": "0"
+        },
+        "valorMaximo": {
+          "descricao": "Representa o número maximo a ser preenchido",
+          "valor": "10000000"
+        }
+      },
+      "nome": "Quantidade estoque virtual",
+      "id": 10
+    },
+    {
+      "tipo": {
+        "id": "fd95abd0-39f6-44df-82ae-75026423076b",
+        "nome": "AREA-DE-TEXTO",
+        "alias": "Área de texto"
+      },
+      "nome": "Descrição do produto",
+      "id": 11
     }
   ]
 }

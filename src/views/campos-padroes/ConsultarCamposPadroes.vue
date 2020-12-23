@@ -3,12 +3,13 @@
         
         <v-row>
             <v-layout column class="ml-3">
-                <v-flex xs12 sm8 md6>
+                <v-flex xs6 xs4 sm8 md6>
                     Campos padrões
                 </v-flex>
             </v-layout>
-                <v-spacer></v-spacer>
-                <v-btn class="mb-2 mr-4" small right color="green" to="/campos-padroes/novo"> Novo</v-btn>
+            <v-spacer></v-spacer>
+            <v-btn class="mb-2 mr-7" small right color="green" to="/campos-padroes/novo"> Novo</v-btn>
+       
         </v-row>
         <v-divider></v-divider>
         <v-simple-table>
@@ -18,10 +19,10 @@
                         <th class="text-left">
                             Nome do campo
                         </th>
-                        <th class="text-left">
+                        <th  class="text-left">
                             Tipo
                         </th>
-                        <th class="text-left">
+                        <th v-show="!$vuetify.breakpoint.xs" class="text-left">
                             Produtivo
                         </th>
                     </tr>
@@ -29,8 +30,13 @@
                 <tbody>
                     <tr v-for="campoDaVez in camposPadroes" :key="campoDaVez.nome" @click="detalhes(campoDaVez.id)">
                         <td>{{ campoDaVez.nome }}</td>
-                        <td>{{ campoDaVez.tipo.alias }}</td>
-                        <td>{{ campoDaVez.produtivo ? 'Sim' : 'Não' }}</td>
+
+                        <td >
+                            {{ campoDaVez.tipo.alias }}
+                        </td>
+                        <td v-show="!$vuetify.breakpoint.xs">
+                            {{ campoDaVez.produtivo ? 'Sim' : 'Não' }}
+                            </td>
                     </tr>
                 </tbody>
             </template>
