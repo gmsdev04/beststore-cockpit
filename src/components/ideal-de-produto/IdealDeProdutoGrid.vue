@@ -1,60 +1,133 @@
 <template>
-  <div class="ideal-de-produto-grid">
-      <v-container fluid>
-    <v-layout align-start justify-center>
-      <v-spacer></v-spacer>
-      <v-flex xs4 class="elevation-1 pa-3 ma-2">
-        <v-tabs v-model="active" color="cyan" dark slider-color="yellow">
-          <draggable v-model="tabs" class="v-tabs__container">
-            <v-tab v-for="tab in tabs" :key="tab.id" ripple>
-              {{ tab.name }}
-            </v-tab>
-          </draggable>
-          <v-tab-item v-for="tab in tabs" :key="tab.id">
-            <v-card flat>
-              <v-card-text>{{ tab.text }}</v-card-text>
-            </v-card>
-          </v-tab-item>
-        </v-tabs>
-      </v-flex>
-      <v-flex xs4 class="grey lighten-2 pa-2">
-        <pre>{{ tabs }}</pre>
-      </v-flex>
-      <v-spacer></v-spacer>
-    </v-layout>
-  </v-container>
-  </div>
+    <div class="ideal-de-produto-grid">
+        <v-container>
+             <v-row v-for="linha in linhas" :key="linha.numero" no-gutters>
+                <v-col
+                    v-for="(campo, index) in linha.campos"
+                    :key="campo.id"
+                    cols="12"
+                    sm="4"
+                >
+                    <v-card
+                        class="mx-1"
+                        outlined
+                    >
+                        <v-list-item three-line>
+                        <v-list-item-content>
+                                <div class="mb-4">
+                                    {{ campo.nome }}
+                                </div>
+                                <div class=" mb-4">
+                                    <strong>Posição campo: </strong> {{ index }}
+                                </div>
+                            
+                        </v-list-item-content>
+
+                        </v-list-item>
+
+                        <v-card-actions>
+                            <v-btn text>
+                                Editar
+                            </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </v-col>
+            </v-row>
+               
+
+        </v-container>
+    </div>
 </template>
 
 <script>
-import draggable from "vuedraggable";
 
 export default {
-    components: {draggable},
     data() {
-        return {
-        active: 0,
-        tabs: [
-            {
-            id: 1, 
-            name: "1st Tab",
-            text: "This is a 1st tab"
-            },
-            {
-            id: 2, 
-            name: "2nd Tab",
-            text: "This is a 2nd tab"
-            },
-            {
-            id: 3, 
-            name: "3rd Tab",
-            text: "This is a 3rd tab"
+            return {
+                active: 0,
+                linhas: [
+                    {
+                        numero:1,
+                        campos: [
+                            {
+                            nome: "Quantidade estoque real",
+                            produtivo: true,
+                            id: 1,
+                            tipo: {
+                                id: "8453042f-18a0-4172-acb0-08214ba1f814",
+                                nome: "NUMERO",
+                                alias: "Número",
+                                valorPadrao: {
+                                    descricao: "Representa o número caso nenhum seja inserido",
+                                    valor: 0
+                                },
+                                valorMinimo: {
+                                    descricao: "Representa o menor número a incluido",
+                                    valor: 0
+                                },
+                                valorMaximo: {
+                                    descricao: "Representa o número maximo a ser preenchido",
+                                    valor: 10000000
+                                }
+                            }
+                            },
+                            {
+                            nome: "Quantidade estoque virtual",
+                            produtivo: true,
+                            id: 2,
+                            tipo: {
+                                id: "8453042f-18a0-4172-acb0-08214ba1f814",
+                                nome: "NUMERO",
+                                alias: "Número",
+                                valorPadrao: {
+                                    descricao: "Representa o número caso nenhum seja inserido",
+                                    valor: 0
+                                },
+                                valorMinimo: {
+                                    descricao: "Representa o menor número a incluido",
+                                    valor: 0
+                                },
+                                valorMaximo: {
+                                    descricao: "Representa o número maximo a ser preenchido",
+                                    valor: 10000000
+                                }
+                            }
+                            },
+                                 {
+                            nome: "Quantidade de",
+                            produtivo: true,
+                            id: 3,
+                            tipo: {
+                                id: "8453042f-18a0-4172-acb0-08214ba1f814",
+                                nome: "NUMERO",
+                                alias: "Número",
+                                valorPadrao: {
+                                    descricao: "Representa o número caso nenhum seja inserido",
+                                    valor: 0
+                                },
+                                valorMinimo: {
+                                    descricao: "Representa o menor número a incluido",
+                                    valor: 0
+                                },
+                                valorMaximo: {
+                                    descricao: "Representa o número maximo a ser preenchido",
+                                    valor: 10000000
+                                }
+                            }
+                            }
+
+                        ]        
+                    }
+                ]
+                
             }
-        ]
-    }
+    },
+    computed : {
+        qtdLinhasParaOsCampos(){
+           return parseInt((this.campos.length / 3 ) + 1 )
+        }
     }
 }
-
 </script>
 
 <style>
