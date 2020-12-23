@@ -26,7 +26,7 @@
       "alias": "Número",
       "valorPadrao": {
         "descricao": "Representa o número caso nenhum seja inserido",
-        "valor": "0.0"
+        "valor": "0"
       },
       "valorMinimo": {
         "descricao": "Representa o menor número a incluido",
@@ -34,7 +34,7 @@
       },
       "valorMaximo": {
         "descricao": "Representa o número maximo a ser preenchido",
-        "valor": "0"
+        "valor": "10000000"
       }
     },
     {
