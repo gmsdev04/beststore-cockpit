@@ -29,7 +29,7 @@
                 <tbody>
                     <tr v-for="campoDaVez in camposPadroes" :key="campoDaVez.nome" @click="detalhes(campoDaVez.id)">
                         <td>{{ campoDaVez.nome }}</td>
-                        <td>{{ campoDaVez.tipo.nome }}</td>
+                        <td>{{ campoDaVez.tipo.alias }}</td>
                         <td>{{ campoDaVez.produtivo ? 'Sim' : 'Não' }}</td>
                     </tr>
                 </tbody>

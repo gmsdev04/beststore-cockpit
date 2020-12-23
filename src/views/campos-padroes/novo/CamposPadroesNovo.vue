@@ -78,7 +78,7 @@
 
 <script>
 import ConfiguracaoTipoDeDado from '@/components/tipos-de-dados/configuracao/ConfiguracaoTipoDeDado.vue'
-
+import bus from '@/eventBus'
 export default {
     components:{'v-configuracao-tipo-de-dado':ConfiguracaoTipoDeDado},
     data(){
@@ -98,8 +98,7 @@ export default {
     methods : {
         salvar(){
             this.loadingSalvando = true;
-
-            
+            this.$http.post('campos-padroes',this.campoPadrao).then(()=>{})
             this.loadingSalvando = false;
 
             //RESETA CAMPO E LIMPA VALIDATIONS
@@ -112,6 +111,11 @@ export default {
         this.$http.get("tipos-de-dados")
         .then(res => {
             this.tiposDeDados = res.data
+        })
+
+        //busão de atualização de tipo
+        bus.listenEvent("tipoCampoUpdateValues",data => {
+            this.campoPadrao.tipo = data
         })
     },
     computed : {
