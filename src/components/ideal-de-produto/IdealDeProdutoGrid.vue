@@ -9,23 +9,25 @@
                     sm="4"
                 >
                     <v-card
-                        class="mx-1"
-                        outlined
+                        class="mx-1 my-1"
+                        color="#fff0f2"
                     >
-                        <v-list-item three-line>
+                        <v-list-item>
                         <v-list-item-content>
-                                <div class="mb-4">
+                                <div class="mb-1 text-center">
                                     {{ campo.nome }}
                                 </div>
-                                <div class=" mb-4">
+                                <v-divider></v-divider>
+                                <div class="mb-1 label-texts">
                                     <strong>Posição campo: </strong> {{ index }}
                                 </div>
-                            
+                                <div class="mb-1 label-texts">
+                                    <strong>Tipo: </strong> {{ campo.tipo.alias }}
+                                </div>
                         </v-list-item-content>
 
                         </v-list-item>
-
-                        <v-card-actions>
+                        <v-card-actions >
                             <v-btn text>
                                 Editar
                             </v-btn>
@@ -33,8 +35,6 @@
                     </v-card>
                 </v-col>
             </v-row>
-               
-
         </v-container>
     </div>
 </template>
@@ -94,7 +94,7 @@ export default {
                             }
                             },
                                  {
-                            nome: "Quantidade de",
+                            nome: "AZZZZZZZZZZZZZZZZZZZZZZZZZZZY",
                             produtivo: true,
                             id: 3,
                             tipo: {
@@ -131,5 +131,7 @@ export default {
 </script>
 
 <style>
-
+.label-texts{
+    font-size: 80%;
+}
 </style>

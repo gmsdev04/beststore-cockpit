@@ -54,10 +54,10 @@
 
                 <v-expansion-panel>
                     <v-expansion-panel-header >
-                        Ideal de produto
+                        Formulários
                     </v-expansion-panel-header>
                     <v-expansion-panel-content  v-if="negocio != undefined">
-                            <IdealDeProdutoGrid/>
+                            <FormulariosGrid/>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -65,10 +65,10 @@
 </template>
 
 <script>
-import IdealDeProdutoGrid from '@/components/ideal-de-produto/IdealDeProdutoGrid.vue'
+import FormulariosGrid from '@/components/formularios/FormulariosGrid.vue'
 
     export default {
-        components: {IdealDeProdutoGrid},
+        components: {FormulariosGrid},
         props: ['id'],
         data() {
             return {
