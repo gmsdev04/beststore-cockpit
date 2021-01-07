@@ -28,7 +28,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="campoDaVez in camposPadroes" :key="campoDaVez.nome" @click="detalhes(campoDaVez.id)">
+                    <tr v-for="campoDaVez in camposPadroes" :key="campoDaVez.nome" @click="detalhes(campoDaVez._id)">
                         <td>{{ campoDaVez.nome }}</td>
 
                         <td >
@@ -42,14 +42,21 @@
             </template>
         </v-simple-table>
 
-    </div>
+        <!-- CINCULAR LOAD -->
+        <div class="text-center">
+            <v-progress-circular indeterminate v-show="camposPadroes == undefined"
+                color="green"
+            ></v-progress-circular>
+            </div>
+        </div>
+  
 </template>
 
 <script>
 export default {
     data(){
         return {
-            camposPadroes : []
+            camposPadroes : undefined
         }
     },
     methods: {
@@ -60,8 +67,9 @@ export default {
     created(){
         this.$http.get("campos-padroes")
         .then(res => {
-            this.camposPadroes = res.data
+            this.camposPadroes = res.data.data
         })
+
     }
 }
 </script>

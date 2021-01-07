@@ -110,7 +110,7 @@ export default {
     created(){
         this.$http.get("tipos-de-dados")
         .then(res => {
-            this.tiposDeDados = res.data
+            this.tiposDeDados = res.data.data
         })
 
         //busão de atualização de tipo

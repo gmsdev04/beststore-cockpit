@@ -1,12 +1,17 @@
 <template>
   <div class="negocios-consulta">
     <v-row>
+      <v-layout column class="ml-3">
+        <v-flex xs6 xs4 sm8 md6>
+          Negócios
+        </v-flex>
+      </v-layout>
       <v-spacer></v-spacer>
      <v-btn class="mb-2 mr-4"  small right to="/negocios/novo" color="green" 
       > Novo</v-btn>
-
+      
     </v-row>
-      <v-divider></v-divider>
+    <v-divider></v-divider>
     <v-simple-table >
     <template v-slot:default>
       <thead>
@@ -54,13 +59,13 @@
     },
     methods:{
       detalhesDoNegocio(negocio){
-        this.$router.push({name: 'detalharNegocio', params: { id:negocio.id}}) 
+        this.$router.push({name: 'detalharNegocio', params: { id:negocio._id}}) 
       }
     },
      created(){
        this.$http.get('negocios')
 				.then(resp => {
-					this.negocios = resp.data
+					this.negocios = resp.data.data
 				})
       }
   }

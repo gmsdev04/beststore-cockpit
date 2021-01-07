@@ -78,7 +78,7 @@ import FormulariosGrid from '@/components/formularios/FormulariosGrid.vue'
         created() {
             this.$http.get('negocios/' + this.id)
                 .then(resp => {
-                    this.negocio = resp.data
+                    this.negocio = resp.data.data
                 })
         },
         methods: {

@@ -109,16 +109,15 @@ export default {
     created(){
         this.$http.get("campos-padroes/"+this.id)
         .then(res => {
-            this.campoPadrao = res.data
+            this.campoPadrao = res.data.data
         })
 
         this.$http.get("tipos-de-dados")
         .then(res => {
-            this.tiposDeDados = res.data
+            this.tiposDeDados = res.data.data
         })
 
         bus.listenEvent("tipoCampoUpdateValues",data => {
-            console.log('recebi atualizacao de numero')
             this.campoPadrao.tipo = data
         })
 
