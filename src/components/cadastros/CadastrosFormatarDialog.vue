@@ -24,7 +24,7 @@
             >
               <v-icon>mdi-close</v-icon>
             </v-btn>
-            <v-toolbar-title>Formatar formulário</v-toolbar-title>
+            <v-toolbar-title>Formatar cadastro</v-toolbar-title>
             <v-spacer></v-spacer>
             <v-toolbar-items>
               <v-btn

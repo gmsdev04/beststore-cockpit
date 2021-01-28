@@ -54,10 +54,10 @@
 
                 <v-expansion-panel>
                     <v-expansion-panel-header >
-                        Formulários
+                        Cadastros
                     </v-expansion-panel-header>
                     <v-expansion-panel-content  v-if="negocio != undefined">
-                            <FormulariosGrid/>
+                            <CadastrosGrid/>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -65,10 +65,10 @@
 </template>
 
 <script>
-import FormulariosGrid from '@/components/formularios/FormulariosGrid.vue'
+import CadastrosGrid from '@/components/cadastros/CadastrosGrid.vue'
 
     export default {
-        components: {FormulariosGrid},
+        components: {CadastrosGrid},
         props: ['id'],
         data() {
             return {

@@ -76,6 +76,10 @@ const routes = [
     path:"/campos-padroes/:id", 
     component:CamposPadroesDetalhes, 
     props: true
+  },
+  {
+    path : '*',
+    redirect : '/'
   }
 ]
 
@@ -83,6 +87,11 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+router.beforeEach((to, from, next) => {
+  console.log('antes das rotas -> global')
+  next()
 })
 
 export default router
