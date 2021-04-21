@@ -1,6 +1,6 @@
 <template>
   <div class="lsitaDeCadastros">
-      <v-simple-table >
+      <v-simple-table>
     <template v-slot:default>
       <thead>
         <tr>
@@ -26,7 +26,8 @@
            <td>{{ negocio.ativo ? 'Sim' : 'Não' }}</td>
         </tr> -->
       </tbody>
-    </template>
+    </template>  
+  </v-simple-table>
   </div>
 </template>
 

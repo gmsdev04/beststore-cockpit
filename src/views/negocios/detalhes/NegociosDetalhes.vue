@@ -57,7 +57,7 @@
                         Cadastros
                     </v-expansion-panel-header>
                     <v-expansion-panel-content  v-if="negocio != undefined">
-                            <CadastrosGrid/>
+                            <ListaDeCadastros/>
                     </v-expansion-panel-content>
                 </v-expansion-panel>
             </v-expansion-panels>
@@ -65,10 +65,10 @@
 </template>
 
 <script>
-import CadastrosGrid from '@/components/cadastros/CadastrosGrid.vue'
+import ListaDeCadastros from '@/components/cadastros/ListaDeCadastros.vue'
 
     export default {
-        components: {CadastrosGrid},
+        components: {ListaDeCadastros},
         props: ['id'],
         data() {
             return {

@@ -56,7 +56,7 @@ export default {
                     title: 'Agora',
                     icon: 'mdi-chart-areaspline-variant',
                     color: 'green darken-2',
-                    to: '/'
+                    to: '/agora'
                 },
                 {
                     title: 'Usuários',
@@ -87,6 +87,12 @@ export default {
                     icon: 'mdi-account-group',
                     color: 'green darken-2',
                     to: '/grupos-de-acessos'
+                },
+                {
+                    title: 'Cadastros',
+                    icon: 'mdi-form-select',
+                    color: 'green darken-2',
+                    to: '/cadastros'
                 },
                 {
                     title: 'Negócios',

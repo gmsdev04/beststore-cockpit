@@ -16,7 +16,7 @@
 
       <v-avatar size="36px">
         <img alt="Avatar"
-          src="https://media-exp1.licdn.com/dms/image/C5103AQEpJ0LhWNvlNg/profile-displayphoto-shrink_800_800/0/1517283387584?e=1613606400&v=beta&t=GXexqJ_5E1IwiomHj_RQOu4o1eurFM5FOPvP8vunWLo">
+          src="https://media-exp1.licdn.com/dms/image/C5103AQEpJ0LhWNvlNg/profile-displayphoto-shrink_200_200/0/1517283387584?e=1624492800&v=beta&t=iWesYrRUcRnc4Gzq_vdF2OUk3q7pLVd0uhxfU_2EArs">
       </v-avatar>
     </v-app-bar>
     
