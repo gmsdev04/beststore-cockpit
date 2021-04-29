@@ -63,7 +63,7 @@
       }
     },
      created(){
-       this.$http.get('negocios')
+       this.$http.get('/api/v1/negocios')
 				.then(resp => {
 					this.negocios = resp.data.data
 				})

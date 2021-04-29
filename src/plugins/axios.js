@@ -4,7 +4,7 @@ import axios from 'axios'
 Vue.use({
     install(Vue){
         Vue.prototype.$http = axios.create({ //CRIANDO A INSTANCIA DO AXIOS SEM SER GLOBAL
-            baseURL: 'http://localhost:3540/api/v1/',
+            baseURL: 'http://localhost:3540',
             headers: {
                 'Authorization' : 'abc'
             }
